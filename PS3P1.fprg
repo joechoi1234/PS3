@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="josep"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2022-03-03 06:02:29 PM"/>
+        <attribute name="created" value="am9zZXA7REVTS1RPUC1PNjBGMlZHOzIwMjItMDMtMDM7MDU6NDg6MDkgUE07Mjg2OA=="/>
+        <attribute name="edited" value="am9zZXA7REVTS1RPUC1PNjBGMlZHOzIwMjItMDMtMDM7MDY6MDI6MjkgUE07MTsyOTY5"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="qnty" type="Real" array="False" size=""/>
+            <declare name="up" type="Real" array="False" size=""/>
+            <declare name="extprice" type="Real" array="False" size=""/>
+            <declare name="tax" type="Real" array="False" size=""/>
+            <declare name="total" type="Real" array="False" size=""/>
+            <output expression="&quot;Please enter a quantity&quot;" newline="True"/>
+            <input variable="qnty"/>
+            <if expression="qnty &gt;= 1000">
+                <then>
+                    <assign variable="up" expression="3"/>
+                </then>
+                <else>
+                    <assign variable="up" expression="5"/>
+                </else>
+            </if>
+            <assign variable="extprice" expression="qnty * up"/>
+            <assign variable="tax" expression="extprice * .07"/>
+            <assign variable="total" expression="extprice + tax"/>
+            <output expression="&quot;Quantity Order &quot; &amp; qnty" newline="True"/>
+            <output expression="&quot;Unit price: &quot; &amp; up" newline="True"/>
+            <output expression="&quot;Extended price: &quot; &amp; extprice" newline="True"/>
+            <output expression="&quot;Tax: &quot; &amp; tax" newline="True"/>
+            <output expression="&quot;Total: &quot; &amp; total" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

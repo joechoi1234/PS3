@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="josep"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2022-03-03 06:36:54 PM"/>
+        <attribute name="created" value="am9zZXA7REVTS1RPUC1PNjBGMlZHOzIwMjItMDMtMDM7MDY6Mjc6NDAgUE07Mjg2MQ=="/>
+        <attribute name="edited" value="am9zZXA7REVTS1RPUC1PNjBGMlZHOzIwMjItMDMtMDM7MDY6MzY6NTQgUE07MTsyOTc0"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="app" type="Real" array="False" size=""/>
+            <declare name="tax" type="Real" array="False" size=""/>
+            <declare name="itemname" type="String" array="False" size=""/>
+            <declare name="extprice" type="Real" array="False" size=""/>
+            <declare name="total" type="Real" array="False" size=""/>
+            <output expression="&quot;Enter item name: &quot;" newline="True"/>
+            <input variable="itemname"/>
+            <output expression="&quot;Enter cost of appliance: &quot;" newline="True"/>
+            <input variable="app"/>
+            <if expression="app &gt;= 1000">
+                <then>
+                    <assign variable="tax" expression="app * .1"/>
+                </then>
+                <else>
+                    <assign variable="tax" expression="app * .05"/>
+                </else>
+            </if>
+            <assign variable="extprice" expression="app + tax"/>
+            <output expression="&quot;Item name: &quot; &amp; itemname" newline="True"/>
+            <output expression="&quot;Cost of appliance: &quot; &amp; app" newline="True"/>
+            <output expression="&quot;Warrantee charge: &quot; &amp; tax" newline="True"/>
+            <output expression="&quot;Total cost: &quot; &amp; extprice" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>
